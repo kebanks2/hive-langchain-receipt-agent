@@ -13,6 +13,9 @@ python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
 The command prints a `https://thehiveryiq.com/verify/?id=...` URL when Hive
 returns a receipt.
 
+Current claim-tagged verification receipt:
+`https://thehiveryiq.com/verify/?id=326fa3500b51401888f792035246f6b2`.
+
 ## Configuration
 
 - `HIVE_BOUNTY_TAG`: optional override for the registered Hive bounty referrer
