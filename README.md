@@ -19,6 +19,8 @@ returns a receipt.
   Defaults to `local-demo`.
 - `HIVE_API_KEY`: optional Hive API key. The default free endpoint supports
   receipt minting without one.
+- `HIVE_REQUIRE_BOUNTY_TAG=1`: optional claim-time guard that fails unless
+  `HIVE_BOUNTY_TAG` starts with `bounty_`.
 
 ## Local checks
 
@@ -41,4 +43,5 @@ Before public submission:
 1. Register on the bounty page and replace `local-demo` with the returned
    referrer code through `HIVE_BOUNTY_TAG`.
 2. Push this repository publicly with the MIT license.
-3. Run the one-command setup and submit the printed verification URL.
+3. Run `HIVE_REQUIRE_BOUNTY_TAG=1 HIVE_BOUNTY_TAG=bounty_xxxx python agent.py`
+   and submit the printed verification URL.

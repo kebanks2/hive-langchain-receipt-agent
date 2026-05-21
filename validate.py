@@ -24,7 +24,9 @@ def main() -> None:
         "StateGraph",
         "FakeListLLM",
         "HiveCallbackHandler",
+        "RecordingHiveCallbackHandler",
         "HIVE_BOUNTY_TAG",
+        "HIVE_REQUIRE_BOUNTY_TAG",
     )
     require(
         "README.md",
@@ -32,6 +34,7 @@ def main() -> None:
         "python3 -m venv .venv",
         "Primary framework: LangGraph",
         "HIVE_BOUNTY_TAG",
+        "HIVE_REQUIRE_BOUNTY_TAG",
     )
     print("validate.py passed")
 
