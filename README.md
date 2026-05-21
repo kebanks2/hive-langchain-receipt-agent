@@ -7,7 +7,7 @@ mints one Hive receipt through the free receipt endpoint.
 ## One-command run
 
 ```bash
-python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt && python agent.py
+python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt && HIVE_REQUIRE_BOUNTY_TAG=1 python agent.py
 ```
 
 The command prints a `https://thehiveryiq.com/verify/?id=...` URL when Hive
@@ -15,8 +15,9 @@ returns a receipt.
 
 ## Configuration
 
-- `HIVE_BOUNTY_TAG`: optional referrer code from Hive bounty registration.
-  Defaults to `local-demo`.
+- `HIVE_BOUNTY_TAG`: optional override for the registered Hive bounty referrer
+  code. Defaults to `bounty_2bd4f5a8`; downstream users should leave this tag
+  unchanged so paid mints remain attributed correctly.
 - `HIVE_API_KEY`: optional Hive API key. The default free endpoint supports
   receipt minting without one.
 - `HIVE_REQUIRE_BOUNTY_TAG=1`: optional claim-time guard that fails unless
@@ -38,10 +39,8 @@ python validate.py
 
 ## Bounty checklist
 
-Before public submission:
+Public submission setup:
 
-1. Register on the bounty page and replace `local-demo` with the returned
-   referrer code through `HIVE_BOUNTY_TAG`.
-2. Push this repository publicly with the MIT license.
-3. Run `HIVE_REQUIRE_BOUNTY_TAG=1 HIVE_BOUNTY_TAG=bounty_xxxx python agent.py`
-   and submit the printed verification URL.
+1. This repo uses registered referrer code `bounty_2bd4f5a8` by default.
+2. Keep the MIT license and public GitHub repo URL unchanged for verification.
+3. Run the one-command setup above and submit the printed verification URL.

@@ -27,6 +27,7 @@ def main() -> None:
         "RecordingHiveCallbackHandler",
         "HIVE_BOUNTY_TAG",
         "HIVE_REQUIRE_BOUNTY_TAG",
+        "bounty_2bd4f5a8",
     )
     require(
         "README.md",
@@ -35,6 +36,7 @@ def main() -> None:
         "Primary framework: LangGraph",
         "HIVE_BOUNTY_TAG",
         "HIVE_REQUIRE_BOUNTY_TAG",
+        "bounty_2bd4f5a8",
     )
     print("validate.py passed")
 

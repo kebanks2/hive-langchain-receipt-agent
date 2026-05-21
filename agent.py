@@ -18,6 +18,9 @@ class AgentState(TypedDict):
     response: str
 
 
+DEFAULT_BOUNTY_TAG = "bounty_2bd4f5a8"
+
+
 class RecordingHiveCallbackHandler(HiveCallbackHandler):
     """Hive callback that records the receipt URL for deterministic demos."""
 
@@ -58,7 +61,7 @@ class RecordingHiveCallbackHandler(HiveCallbackHandler):
 
 
 def main() -> None:
-    tag = os.environ.get("HIVE_BOUNTY_TAG", "local-demo")
+    tag = os.environ.get("HIVE_BOUNTY_TAG", DEFAULT_BOUNTY_TAG)
     require_bounty_tag = os.environ.get("HIVE_REQUIRE_BOUNTY_TAG") == "1"
     if require_bounty_tag and not tag.startswith("bounty_"):
         raise SystemExit("Set HIVE_BOUNTY_TAG=bounty_... before claim validation")
